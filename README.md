@@ -1,4 +1,4 @@
-# py-utils
+# py-dicom-utils
 
 Flask based web-service for converting DICOM files in various formats and visualize them:
 
