@@ -2,7 +2,7 @@
 
 Flask based web-service exposing different API's:
 
- - statistics: POST /<operation>
+ - statistics: POST /operation
     - supported operations:
       1. mean
       2. median
