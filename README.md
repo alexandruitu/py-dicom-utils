@@ -1,9 +1,12 @@
 # py-dicom-utils
 
-Flask based web-service for converting DICOM files in various formats and visualize them:
+Flask based web-service exposing different API's:
 
-1. - generate thumbnails
-2. - convert to mhd a DICOM series
-3. - web-socket based web server for visualization
-
-! - the data is assumed stored in an S3 account
+1. - statistics: POST /<operation>
+    supported operations:
+      1. mean
+      2. median
+      3. sort
+      4 ...
+      
+2. - more to come
