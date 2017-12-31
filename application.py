@@ -8,12 +8,10 @@ import json
 application = Flask(__name__)
 
 
-#stddev
+# stddev
 def stddev(numbers):
-    mean_numbers = sum([float(i) for i in numbers]) / len(numbers)
-    int1 = [(float(i) - mean_numbers)**2 for i in numbers]
-    int2 = sum(int1) / len(numbers)
-    std_dev = math.sqrt(int2)
+    mean_numbers = sum([float(number) for number in numbers]) / len(numbers)
+    std_dev = math.sqrt(sum([(float(number) - mean_numbers)**2 for number in numbers])/len(numbers))
     return str(std_dev)
 
 
