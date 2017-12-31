@@ -1,10 +1,20 @@
 from flask import Flask, request, abort
-from joblib import delayed
-import SimpleITK as sitk
-import dicom
+#from joblib import delayed
+#import SimpleITK as sitk
+#import dicom
+import math
 import json
 
 application = Flask(__name__)
+
+
+#stddev
+def stddev(numbers):
+    mean_numbers = sum([float(i) for i in numbers]) / len(numbers)
+    int1 = [(float(i) - mean_numbers)**2 for i in numbers]
+    int2 = sum(int1) / len(numbers)
+    std_dev = math.sqrt(int2)
+    return str(std_dev)
 
 
 # mean
@@ -40,6 +50,8 @@ def statistics(operation):
     elif operation == 'sort':
         numbers.sort()
         return json.dumps(numbers)
+    elif operation == 'stddev':
+        return stddev(numbers)
     elif operation == 'mode':
         return operation
 
